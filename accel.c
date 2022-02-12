@@ -47,13 +47,7 @@ static const TypeInfo accel_type = {
 };
 
 /* Lookup AccelClass from opt_name. Returns NULL if not found */
-static AccelClass *accel_find(const char *opt_name)
-{
-    char *class_name = g_strdup_printf(ACCEL_CLASS_NAME("%s"), opt_name);
-    AccelClass *ac = ACCEL_CLASS(object_class_by_name(class_name));
-    g_free(class_name);
-    return ac;
-}
+
 
 static int accel_init_machine(AccelClass *acc, MachineState *ms)
 {
