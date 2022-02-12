@@ -1,10 +1,7 @@
-/*
- * QEMU System Emulator, accelerator interfaces
- *
- * Copyright (c) 2003-2008 Fabrice Bellard
+ * Apollo System Emulator, accelerator interfaces
+ * Copyright (c) 2022 Zhang KEPENG
  * Copyright (c) 2014 Red Hat Inc.
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -33,14 +30,13 @@
 #include "sysemu/qtest.h"
 #include "hw/xen/xen.h"
 #include "qom/object.h"
+#include "sys/config.h"
 
 int tcg_tb_size;
 static bool tcg_allowed = true;
 
 static int tcg_init(MachineState *ms)
 {
-    tcg_exec_init(tcg_tb_size * 1024 * 1024);
-    return 0;
 }
 
 static const TypeInfo accel_type = {
